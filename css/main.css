@@ -1,0 +1,224 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  background: #636363;
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+body {
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  height: 1000vh;
+}
+
+.wrapper {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.nav {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: rgba(21, 16, 29, 0.8);
+  z-index: 10;
+}
+
+@media (max-width: 768px) {
+  .nav {
+    display: none;
+  }
+}
+
+.nav .nav_list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style-type: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 50px;
+}
+
+.nav .nav_link {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: .5rem;
+  letter-spacing: .1rem;
+}
+
+.hero {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 5rem 2rem;
+  min-height: 30vh;
+  z-index: 2019;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 2rem 1rem;
+  }
+}
+
+.hero .hero_header {
+  font-size: 4rem;
+  margin: .5rem;
+  color: coral;
+}
+
+@supports (-webkit-background-clip: text) {
+  .hero .hero_header {
+    background: -webkit-gradient(linear, left top, right top, from(#E34A40), to(#F3A712));
+    background: linear-gradient(to right, #E34A40, #F3A712);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+  }
+}
+
+.content {
+  display: block;
+  padding: 5rem 1rem;
+}
+
+@media (max-width: 768px) {
+  .content {
+    padding: 2rem 1rem;
+  }
+}
+
+.content .content_header {
+  font-size: 1.5rem;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto 2rem;
+}
+
+.sources {
+  list-style-type: none;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 1rem;
+  grid-row-gap: 1rem;
+}
+
+.sources .sources_item {
+  overflow: hidden;
+  position: relative;
+  background: #fff;
+  border-radius: .5rem;
+}
+
+.sources .sources_item:before {
+  position: absolute;
+  content: '</>';
+  bottom: 0;
+  right: .5rem;
+  font-size: 4rem;
+  font-weight: 700;
+  opacity: 0.3;
+  bottom: -100%;
+  -webkit-transition: 0.3s ease-in-out bottom;
+  transition: 0.3s ease-in-out bottom;
+  will-change: bottom;
+  -webkit-transform: rotate(15deg);
+          transform: rotate(15deg);
+  color: #56E39F;
+}
+
+@supports (-webkit-background-clip: text) {
+  .sources .sources_item:before {
+    background: -webkit-gradient(linear, left top, right top, from(#56E39F), to(#01BAEF));
+    background: linear-gradient(to right, #56E39F, #01BAEF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+  }
+}
+
+.sources .sources_item:hover:before {
+  bottom: -10%;
+}
+
+@media (max-width: 960px) {
+  .sources {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .sources {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+}
+
+.source {
+  display: block;
+  padding: 1rem;
+  text-decoration: none;
+  color: #000;
+  position: relative;
+  z-index: 10;
+}
+
+.source .source_title {
+  display: block;
+  font-size: 1.2rem;
+  margin-bottom: .8rem;
+}
+
+.source .source_description {
+  font-size: .9rem;
+  opacity: .8;
+}
+
+.footer {
+  display: block;
+  padding: 1rem;
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: #838383;
+  background: #000;
+}
+/*# sourceMappingURL=main.css.map */
