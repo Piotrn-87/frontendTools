@@ -13,14 +13,10 @@ $accent-4: #85BDBF;
 
 html {
   font-size: 16px;
-
-  @media (max-width: 768px) {
-    font-size: 14px;
-  }
-
   scroll-behavior: smooth;
-  background: rgb(99, 99, 99)
+  background: rgb(99, 99, 99);
 }
+
 
 body {
   color: #fff;
@@ -28,24 +24,41 @@ body {
   height: 100vh;
 }
 
-.wrapper {
-  max-width: 1200px;
-  width: 100%;
-  margin: 0 auto;
+.burger {
+  display: none;
+  position: absolute;
+  top: 4%;
+  right: 5%;
+  font-size: 2rem;
+  z-index: 2020;
+
+  .fas {
+    display: none;
+  }
+
+  .show_icon {
+    display: block;
+  }
 }
 
-.nav {
+.burger:hover {
+  cursor: pointer;
+}
+
+@media (max-width: 40rem) {
+  .burger {
+    display: block;
+  }
+}
+
+.main-nav {
   position: sticky;
   top: 0;
   width: 100%;
   background: rgba(21, 16, 29, 1);
   z-index: 10;
 
-  @media (max-width: 768px) {
-    display: none;
-  }
-
-  .nav_list {
+  .main__nav--item {
     display: flex;
     list-style-type: none;
     align-items: center;
@@ -53,7 +66,7 @@ body {
     height: 4rem;
   }
 
-  .nav_link {
+  .main__nav--link {
     display: block;
     color: #fff;
     text-decoration: none;
@@ -62,9 +75,53 @@ body {
     letter-spacing: .1rem;
   }
 
-  .nav_link:hover {
+  .main__nav--link:hover {
     color: $accent-3;
   }
+
+  @media (max-width: 40rem) {
+    .main__nav--item {
+      display: none;
+    }
+  }
+}
+
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 80%;
+  background: #ddd;
+  height: 100vh;
+  z-index: 2019;
+
+  .mobile__nav--items {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 100%;
+    list-style-type: none;
+    margin: 0 auto;
+  }
+
+  .mobile__nav--item {
+    margin: 2rem 0;
+  }
+
+  .mobile__nav--link {
+    margin: 1rem 0;
+    text-transform: uppercase;
+    font-size: 2rem;
+    color: black;
+    list-style-type: none;
+    text-decoration: none;
+  }
+}
+
+.mobile-nav__visible {
+  display: none;
 }
 
 .hero {
@@ -73,11 +130,11 @@ body {
   height: 5rem;
   justify-content: center;
   align-items: center;
-  margin: 2rem auto;
+  margin-top: 3rem;
 
   .hero__header--text {
-    font-size: 3rem;
-    margin: .5rem;
+    font-size: 1.7rem;
+    padding: 1rem;
 
     @supports (-webkit-background-clip: text) {
       background: linear-gradient(to right, $special, $link);
@@ -88,12 +145,17 @@ body {
     }
   }
 
-  @media (max-width: 768px) {
+  @media (orientation: landscape) {
     .hero__header--text {
-      padding: 1rem;
-      font-size: 2rem;
+      font-size: 3rem;
     }
   }
+}
+
+.wrapper {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .content {

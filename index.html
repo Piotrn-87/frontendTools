@@ -5,23 +5,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/normalize.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
 </head>
 
 <body>
+
+    <!-- Burger Menu -->
+    <div class="burger">
+        <i class="fas fa-bars show_icon"></i>
+        <i class="fas fa-times"></i>
+    </div>
+
     <!-- nav -->
-    <nav class="nav">
-        <ul class="nav_list">
-            <li class="nav__list--item">
-                <a class="nav_link" href="#do_poczytania">do poczytania</a>
+    <nav class="main-nav">
+        <ul class="main__nav--item">
+            <li class="main__nav--items">
+                <a class="main__nav--link" href="#do_poczytania">do poczytania</a>
             </li>
-            <li class="nav__list--item">
-                <a class="nav_link" href="#do_obejrzenia">do obejrzenia</a>
+            <li class="main__nav--items">
+                <a class="main__nav--link" href="#do_obejrzenia">do obejrzenia</a>
             </li>
-            <li class="nav__list--item">
-                <a class="nav_link" href="#do_pobrania">do pobrania</a>
+            <li class="main__nav--items">
+                <a class="main__nav--link" href="#do_pobrania">do pobrania</a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- mobile nav -->
+    <nav class="mobile-nav mobile-nav__visible">
+        <ul class="mobile__nav--items">
+            <li class="mobile__nav--item">
+                <a class="mobile__nav--link" href="#do_poczytania">do poczytania</a>
+            </li>
+            <li class="mobile__nav--item">
+                <a class="mobile__nav--link" href="#do_obejrzenia">do obejrzenia</a>
+            </li>
+            <li class="mobile__nav--item">
+                <a class="mobile__nav--link" href="#do_pobrania">do pobrania</a>
             </li>
         </ul>
     </nav>
