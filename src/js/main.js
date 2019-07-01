@@ -1,8 +1,9 @@
 const headerText = document.querySelector(".hero__header--text");
 const burgerMenu = document.querySelector(".burger");
 const mobileNav = document.querySelector(".mobile-nav");
-const backdrop = document.querySelector(".backdrop");
 const activeElement = document.querySelectorAll(".active");
+const backdrop = document.querySelector(".backdrop");
+const closeModal = document.querySelector(".mobile__nav--items");
 
 const text = "Frontend Resources !!"
 const time = 200;
@@ -25,7 +26,12 @@ burgerMenu.addEventListener("click", (e) => {
     }
 })
 
-backdrop.addEventListener("click", (e) => {
+closeModal.addEventListener("click", (e) => {
     mobileNav.classList.remove("mobile-nav__visible");
     backdrop.classList.remove("backdrop-active");
 })
+
+// backdrop.addEventListener("click", (e) => {
+//     mobileNav.classList.remove("mobile-nav__visible");
+//     backdrop.classList.remove("backdrop-active");
+// })
