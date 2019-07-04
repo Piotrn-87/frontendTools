@@ -29,9 +29,13 @@ burgerMenu.addEventListener("click", (e) => {
 closeModal.addEventListener("click", (e) => {
     mobileNav.classList.remove("mobile-nav__visible");
     backdrop.classList.remove("backdrop-active");
+    for (let i = 0; i < activeElement.length; i++) {
+        activeElement[i].classList.toggle("show_icon");
+    }
 })
 
 // backdrop.addEventListener("click", (e) => {
 //     mobileNav.classList.remove("mobile-nav__visible");
 //     backdrop.classList.remove("backdrop-active");
+//     console.log("dziala");
 // })
