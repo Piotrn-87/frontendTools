@@ -10,6 +10,9 @@ import postcss from "gulp-postcss";
 import sourcemaps from "gulp-sourcemaps";
 import notify from "gulp-notify";
 import plumber from "gulp-plumber";
+import webpack from 'webpack';
+import webpackConfig from './webpack.config.js';
+import webpackStream from 'webpack-stream';
 
 sass.compiler = require("node-sass");
 
@@ -26,7 +29,7 @@ gulp.task("assets", function() {
 
 gulp.task("html", function() {
   return gulp
-    .src("./src/content/*.html")
+    .src("./src/content/**/*.html")
     .pipe(
       plumber(errorHandler)
     )
@@ -36,8 +39,10 @@ gulp.task("html", function() {
 gulp.task("js", function() {
   return gulp
     .src("src/js/main.js")
-    .pipe(babel())
-    .on('error', errorHandler)
+    .pipe(
+      plumber(errorHandler)
+    )
+    .pipe(webpackStream(webpackConfig), webpack)
     .pipe(uglify())
     .on('error', errorHandler)
     .pipe(gulp.dest("dist/js"));
@@ -77,7 +82,7 @@ gulp.task(
       open: true // set to false to disable browser autostart
     });
     gulp.watch("src/scss/**/*", gulp.series("sass"));
-    gulp.watch("src/content/*.html", gulp.series("html"));
+    gulp.watch("src/content/**/*.html", gulp.series("html"));
     gulp.watch("src/js/*.js", gulp.series("js"));
     gulp.watch("src/assets/**/*", gulp.series("assets"));
     gulp.watch("dist/**/*").on("change", browserSync.reload);
